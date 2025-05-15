@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stock-predictor
+  labels:
+    app: stock-predictor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stock-predictor
+  template:
+    metadata:
+      labels:
+        app: stock-predictor
+    spec:
+      containers:
+        - name: stock-predictor
+          image: your-dockerhub-username/stock-predictor:latest
+          ports:
+            - containerPort: 8501
+

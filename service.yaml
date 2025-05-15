@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stock-predictor-service
+spec:
+  selector:
+    app: stock-predictor
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8501
+  type: LoadBalancer
+
